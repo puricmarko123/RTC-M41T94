@@ -19,14 +19,9 @@ static const uint16_t MONTH_DAYS[] = {0U,0U,31U,59U,90U,120U,151U,181U,212U,243U
 void M41T94_Init(void) {
 
     /* Clear HT bit */
-    uint8_t ret = M41T94_Read_Register(M41T94_REG_ALARM_HOUR);
+    M41T94_Write_Register(M41T94_REG_ALARM_HOUR, 0x00U);
 
-    if (ret != 0U)
-    {
-        M41T94_Write_Register(M41T94_REG_ALARM_HOUR, 0x00U);
-    }
-
-	return;
+    return;
 }
 
 /*
